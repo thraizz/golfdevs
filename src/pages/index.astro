@@ -1,0 +1,373 @@
+---
+import "../styles/global.css";
+
+// Navigation Links
+const navLinks = [
+  { text: "Home", url: "#" },
+  { text: "About", url: "#about" },
+  //   { text: "Events", url: "#events" },
+  //   { text: "Resources", url: "#resources" },
+  { text: "Join Discord", url: "#discord", highlight: true },
+];
+
+// Features
+const features = [
+  {
+    title: "Connect",
+    description: "Network with golf enthusiasts who code",
+    icon: "🤝",
+  },
+  {
+    title: "Learn",
+    description: "Share knowledge and improve your skills",
+    icon: "📚",
+  },
+  {
+    title: "Build",
+    description: "Collaborate on golf tech projects",
+    icon: "🛠️",
+  },
+  {
+    title: "Play",
+    description: "Organize golf outings with fellow devs",
+    icon: "⛳",
+  },
+];
+
+export const discordLink = "https://discord.gg/nzS4BcgEZQ";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GolfDevs | Community for Developers Who Love Golf</title>
+    <meta
+      name="description"
+      content="Join our exclusive community for developers who love golf. Connect, share, and build with like-minded professionals."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-[#121212] font-sans text-gray-200">
+    <!-- Header and Navigation -->
+    <header
+      class="bg-[#1E1E1E] shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-[#1E1E1E]/90 border-b border-[#333333]"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="text-3xl">⛳</span>
+            <span class="text-xl font-medium text-[#4ADE80] font-mono"
+              >&lt;GolfDevs/&gt;</span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-6">
+            {
+              navLinks.map((link) => (
+                <a
+                  href={link.url}
+                  class={`text-sm font-medium hover:text-[#4ADE80] transition-colors ${link.highlight ? "py-2 px-4 rounded-md font-medium transition-all transform hover:scale-105 bg-[#4ADE80] text-[#121212] hover:text-black hover:bg-opacity-90" : "text-gray-300"}`}
+                >
+                  {link.text}
+                </a>
+              ))
+            }
+          </div>
+          <button
+            class="md:hidden text-gray-400 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-[#1a1a1a] text-white py-28 relative overflow-hidden border-b border-[#333333]"
+    >
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute inset-0"
+          style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Cg fill-rule=\'evenodd\'%3E%3Cg fill=\'%234ADE80\' fill-opacity=\'0.1\'%3E%3Cpath opacity=\'.5\' d=\'M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+        >
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="max-w-2xl">
+            <h1
+              class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            >
+              Where <span class="text-[#4ADE80] font-mono">&lt;Golf/&gt;</span> Meets
+              <span class="text-[#4ADE80] font-mono">&lt;Code/&gt;</span>
+            </h1>
+            <p class="text-xl mb-10 text-gray-300 leading-relaxed">
+              Join our exclusive community for developers who love the green.
+              Connect, share, and build with like-minded professionals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href={discordLink}
+                class="py-3 px-6 rounded-md font-medium transition-all transform hover:scale-105 bg-[#4ADE80] text-[#121212] hover:bg-opacity-90 text-center group"
+              >
+                Join Our Discord
+                <span
+                  class="ml-2 group-hover:translate-x-1 inline-block transition-transform"
+                  >→</span
+                >
+              </a>
+              <a
+                href="#about"
+                class="py-3 px-6 rounded-md font-medium transition-all transform hover:scale-105 bg-[#333333] text-gray-200 hover:bg-[#444444] text-center"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div class="hidden md:block relative">
+            <div
+              class="absolute -top-20 -right-20 w-64 h-64 bg-[#4ADE80] opacity-10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="absolute -bottom-8 -left-8 w-40 h-40 bg-[#4ADE80] opacity-20 rounded-full blur-xl"
+            >
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Golf Developers"
+              class="rounded-md shadow-xl border border-[#333333] mx-auto relative z-10 transition-transform duration-300 hover:-translate-y-2"
+            />
+            <!-- Code overlay effect -->
+            <div
+              class="absolute inset-0 bg-[#121212] opacity-40 mix-blend-overlay rounded-md"
+            >
+            </div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-4 font-mono text-xs text-[#4ADE80] opacity-70 overflow-hidden z-10"
+            >
+              <pre>function calculateHandicap(scores, ratings) {"{"}
+  return scores.map((s, i) ={">"} s - ratings[i])
+    .sort((a, b) ={">"} a - b)
+    .slice(0, Math.ceil(scores.length * 0.4))
+    .reduce((a, b) ={">"} a + b, 0) / 
+    Math.ceil(scores.length * 0.4) * 0.96;
+{"}"}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          class="text-[#121212]"
+          ><path
+            fill="currentColor"
+            fill-opacity="1"
+            d="M0,128L80,138.7C160,149,320,171,480,165.3C640,160,800,128,960,122.7C1120,117,1280,139,1360,149.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path></svg
+        >
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-24 bg-[#121212]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center mb-3 text-gray-100"
+          >
+            Why Join Our Community?
+          </h2>
+          <p class="text-lg text-gray-400 max-w-3xl mx-auto text-center mb-10">
+            GolfDevs brings together two passions: development and golf. Here's
+            what you'll gain from being part of our community:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            features.map((feature, index) => (
+              <div class="bg-[#1E1E1E] rounded-md border border-[#333333] hover:border-[#4ADE80] transition-all duration-300 p-8 transition-transform duration-300 hover:-translate-y-2">
+                <div class="text-5xl mb-6">{feature.icon}</div>
+                <h3 class="text-xl font-semibold mb-3 text-gray-100">
+                  {feature.title}
+                </h3>
+                <p class="text-gray-400">{feature.description}</p>
+                <div class="mt-6 w-12 h-1 bg-[#4ADE80] rounded-full" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Discord Call-to-Action -->
+    <section
+      id="discord"
+      class="py-24 bg-[#1a1a1a] relative overflow-hidden border-t border-[#333333]"
+    >
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute h-full w-full"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div
+          class="bg-[#1E1E1E] rounded-md shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-[#333333]"
+        >
+          <div class="grid md:grid-cols-2">
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-100">
+                Join Our Discord Community
+              </h2>
+              <p class="text-gray-400 mb-8 text-lg">
+                Connect with 500+ developers who share your passion for golf.
+                Get exclusive access to events, resources, and job
+                opportunities.
+              </p>
+              <div>
+                <a
+                  href={discordLink}
+                  class="inline-flex items-center justify-center py-3 px-6 rounded-md font-medium transition-all transform hover:scale-105 bg-[#4ADE80] text-[#121212] hover:bg-opacity-90 group"
+                >
+                  <svg
+                    class="w-5 h-5 mr-2 transition-transform group-hover:scale-110"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 512"
+                  >
+                    <path
+                      d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"
+                    ></path>
+                  </svg>
+                  Join Discord
+                </a>
+              </div>
+            </div>
+            <div class="relative bg-[#1a1a1a] p-8 md:p-12 overflow-hidden">
+              <div
+                class="absolute -top-10 -right-10 w-40 h-40 bg-[#4ADE80] opacity-10 rounded-full blur-2xl"
+              >
+              </div>
+              <div
+                class="absolute -bottom-10 -left-10 w-40 h-40 bg-[#4ADE80] opacity-10 rounded-full blur-2xl"
+              >
+              </div>
+              <div
+                class="bg-[#262626] rounded-md shadow-lg p-6 max-w-md mx-auto relative z-10 transition-transform duration-300 hover:-translate-y-2 border border-[#333333]"
+              >
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-[#1a1a1a] flex items-center justify-center text-xl overflow-hidden border border-[#333333]"
+                  >
+                    <img
+                      src="https://randomuser.me/api/portraits/men/43.jpg"
+                      alt="John Dev"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div class="ml-3">
+                    <p class="font-medium text-gray-200">John Dev</p>
+                    <p class="text-xs text-gray-500">Today at 12:34 PM</p>
+                  </div>
+                </div>
+                <p class="text-gray-300 mb-4 font-mono">
+                  Hey everyone! Just joined this community. Any golfers in the
+                  San Francisco area want to meet up this weekend?
+                </p>
+                <div class="flex space-x-2">
+                  <div
+                    class="bg-[#1a1a1a] px-3 py-1 rounded-full text-sm flex items-center"
+                  >
+                    <span class="mr-1">👍</span> 12
+                  </div>
+                  <div
+                    class="bg-[#1a1a1a] px-3 py-1 rounded-full text-sm flex items-center"
+                  >
+                    <span class="mr-1">💬</span> 8
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-16 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-40">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-6">
+              <span class="text-3xl">⛳</span>
+              <span class="text-2xl font-bold">GolfDevs</span>
+            </div>
+            <p class="text-gray-400 mb-6">
+              The premier community for developers who love golf.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors flex items-center"
+                  ><span class="mr-2">→</span> Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors flex items-center"
+                  ><span class="mr-2">→</span> About</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-6">Connect</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href={discordLink}
+                  class="text-gray-400 hover:text-white transition-colors flex items-center"
+                  ><span class="mr-2">→</span> Discord</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500"
+        >
+          <p>
+            &copy; {new Date().getFullYear()} GolfDevs Community. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
