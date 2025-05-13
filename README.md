@@ -1,47 +1,54 @@
-# Astro Starter Kit: Minimal
+# GolfDevs
 
-```sh
-npm create astro@latest -- --template minimal
+GolfDevs is a community website for developers who love golf. The site serves as a platform for golf enthusiasts in the tech industry to connect, share knowledge, collaborate on projects, and organize golf outings together.
+
+## Features
+
+- Modern, responsive design
+- Interactive community sections
+- Discord integration for community engagement
+- Built with Astro and TailwindCSS
+
+## Local Development Setup
+
+### Prerequisites
+
+- Node.js (v16 or newer)
+- npm
+
+### Installation
+
+1. Clone the repository
+
+```
+git clone https://github.com/yourusername/golfdevs.git
+cd golfdevs
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+2. Install dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Start the development server
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+This will start the local development server at `localhost:4321`
 
-## 🧞 Commands
+## Scripts
 
-All commands are run from the root of the project, from a terminal:
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Tech Stack
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://astro.build) - Web framework
+- [TailwindCSS](https://tailwindcss.com) - CSS framework
